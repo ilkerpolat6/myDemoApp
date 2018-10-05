@@ -3,11 +3,9 @@ package com.mycompany.app;
 import static spark.Spark.get;
 import static spark.Spark.port;
 import static spark.Spark.post;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-
 import spark.ModelAndView;
 import spark.template.mustache.MustacheTemplateEngine;
 
@@ -25,7 +23,7 @@ public class App {
 
     public static void main(String[] args) {
         port(getHerokuAssignedPort());
-        get("/", (req, res) -> "helomole");
+        get("/", (req, res) -> "Hello, World");
         post("/compute", (req, res) -> {
             // System.out.println(req.queryParams("input1"));
             // System.out.println(req.queryParams("input2"));
