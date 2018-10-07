@@ -12,10 +12,10 @@ import spark.template.mustache.MustacheTemplateEngine;
 public class App {
     public static String search(ArrayList<Integer> array, int x, int y, int z) {
         System.out.println("inside search");
-        String res="";
+        String res="densities:";
         for(int i:array){
             int a=i/(x*y*z);
-            res=i+" ";
+            res=res+" "+a;
         }
 
         return res;
