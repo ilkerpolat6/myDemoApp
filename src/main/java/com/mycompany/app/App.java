@@ -18,10 +18,11 @@ public class App {
             res=res+" "+a;
         }
 
-        return res;
+        return "eksik bir şey mi var";
     }
 
     public static void main(String[] args) {
+        System.out.println("main e girdik");
         port(getHerokuAssignedPort());
         get("/", (req, res) -> "ilker polat");
         post("/compute", (req, res) -> {
