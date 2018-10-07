@@ -17,8 +17,8 @@ public class App {
             int a=i/(x*y*z);
             res=res+" "+a;
         }
-
-        return "eksik bir şey mi var";
+        System.out.println(res);
+        return res;
     }
 
     public static void main(String[] args) {
@@ -56,7 +56,7 @@ public class App {
         }, new MustacheTemplateEngine());
         get("/compute", (rq, rs) -> {
             Map map = new HashMap();
-            map.put("result", "not computed yet!");
+            map.put("result", "nnot computed yet!");
             return new ModelAndView(map, "compute.mustache");
         }, new MustacheTemplateEngine());
     }
