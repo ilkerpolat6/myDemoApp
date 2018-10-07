@@ -42,11 +42,13 @@ public class App {
             System.out.println(inputList);
             String input2 = req.queryParams("input2").replaceAll("\\s", "");
             int input2AsInt = Integer.parseInt(input2);
+            System.out.println("2demek almışız");
             String input3 = req.queryParams("input3").replaceAll("\\s", "");
             int input3AsInt = Integer.parseInt(input3);
+            System.out.println("3demek almışız");
             String input4 = req.queryParams("inpuut4").replaceAll("\\s", "");
             int input4AsInt = Integer.parseInt(input4);
-            System.out.println("demek almışız");
+            System.out.println("4demek almışız");
             String result = App.search(inputList, input2AsInt, input3AsInt, input4AsInt);
             Map map = new HashMap();
             map.put("result", result);
