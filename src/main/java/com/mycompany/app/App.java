@@ -11,7 +11,7 @@ import spark.template.mustache.MustacheTemplateEngine;
 
 public class App {
     public static String search(ArrayList<Integer> array, int x, int y, int z) {
-        System.out.println("inside search");
+        System.out.println("\n*\ninside search");
         String res="densities:";
         for(int i:array){
             int a=i/(x*y*z);
@@ -28,10 +28,13 @@ public class App {
         post("/compute", (req, res) -> {
             // System.out.println(req.queryParams("input1"));
             // System.out.println(req.queryParams("input2"));
+            System.out.println("besmele");
             String input1 = req.queryParams("input1");
             java.util.Scanner sc1 = new java.util.Scanner(input1);
+            System.err.println("ıııııı");
             sc1.useDelimiter("[;\r\n]+");
             java.util.ArrayList<Integer> inputList = new java.util.ArrayList<>();
+            System.out.println("1 scanlendin");
             while (sc1.hasNext()) {
                 int value = Integer.parseInt(sc1.next().replaceAll("\\s", ""));
                 inputList.add(value);
@@ -43,6 +46,7 @@ public class App {
             int input3AsInt = Integer.parseInt(input3);
             String input4 = req.queryParams("inpuut4").replaceAll("\\s", "");
             int input4AsInt = Integer.parseInt(input4);
+            System.out.println("demek almışız");
             String result = App.search(inputList, input2AsInt, input3AsInt, input4AsInt);
             Map map = new HashMap();
             map.put("result", result);
