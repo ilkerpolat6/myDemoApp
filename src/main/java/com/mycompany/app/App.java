@@ -10,15 +10,15 @@ import spark.ModelAndView;
 import spark.template.mustache.MustacheTemplateEngine;
 
 public class App {
-    public static boolean search(ArrayList<Integer> array, int e) {
+    public static String search(ArrayList<Integer> array, int x, int y, int z) {
         System.out.println("inside search");
-        if (array == null)
-            return false;
-        for (int elt : array) {
-            if (elt == e)
-                return true;
+        String res="";
+        for(int i:array){
+            int a=i/(x*y*z);
+            res=i+" ";
         }
-        return false;
+
+        return res;
     }
 
     public static void main(String[] args) {
@@ -38,7 +38,11 @@ public class App {
             System.out.println(inputList);
             String input2 = req.queryParams("input2").replaceAll("\\s", "");
             int input2AsInt = Integer.parseInt(input2);
-            boolean result = App.search(inputList, input2AsInt);
+            String input3 = req.queryParams("input3").replaceAll("\\s", "");
+            int input3AsInt = Integer.parseInt(input3);
+            String input4 = req.queryParams("inpuut4").replaceAll("\\s", "");
+            int input4AsInt = Integer.parseInt(input4);
+            String result = App.search(inputList, input2AsInt, input3AsInt, input4AsInt);
             Map map = new HashMap();
             map.put("result", result);
             return new ModelAndView(map, "compute.mustache");
